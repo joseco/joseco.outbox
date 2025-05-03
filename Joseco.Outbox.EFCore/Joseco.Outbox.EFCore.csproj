@@ -4,13 +4,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/joseco/joseco.outbox</RepositoryUrl>
+    <Company />
+    <Authors>Jose Carlos Gutierrez</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Joseco.Outbox.Contracts\Joseco.Outbox.Contracts.csproj" />
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
-
+  
   <ItemGroup>
+    <PackageReference Include="Joseco.Outbox.Contracts" Version="1.0.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

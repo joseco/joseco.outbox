@@ -9,7 +9,7 @@
     <Company />
     <Authors>Jose Carlos Gutierrez</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +24,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Joseco.Outbox.Contracts" Version="1.0.0" />
+    <PackageReference Include="Joseco.Outbox.Contracts" Version="1.0.1" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

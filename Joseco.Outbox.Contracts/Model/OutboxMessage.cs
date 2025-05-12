@@ -17,13 +17,16 @@ public class OutboxMessage<E> : INotification
 
     public DateTime? ProcessedOn { get; set; }
 
-    public OutboxMessage(E content)
+    public string? CorrelationId { get; set; }
+
+    public OutboxMessage(E content, string? correlationId = null)
     {
         Id = Guid.NewGuid();
         Created = DateTime.Now.ToUniversalTime();
         Processed = false;
         Content = content;
         Type = content.GetType().Name;
+        CorrelationId = correlationId;
     }
 
     public void MarkAsProcessed()

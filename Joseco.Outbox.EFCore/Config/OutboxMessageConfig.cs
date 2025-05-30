@@ -28,6 +28,15 @@ internal class OutboxMessageConfig<E>(string schema = "outbox") : IEntityTypeCon
         builder.Property(x => x.ProcessedOn)
             .HasColumnName("processedOn");
 
+        builder.Property(x => x.CorrelationId)
+            .HasColumnName("correlationId");
+
+        builder.Property(x => x.TraceId)
+            .HasColumnName("traceId");
+
+        builder.Property(x => x.SpanId)
+            .HasColumnName("spanId");
+
         var jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
         var contentConverter = new ValueConverter<E, string>(
            obj => JsonConvert.SerializeObject(obj, jsonSettings),

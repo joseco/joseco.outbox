@@ -38,6 +38,8 @@ The `OutboxMessage<T>` object is the main object that will be used to store the 
 - Processed: A boolean value that indicates whether the message has been processed or not. This field is used to track the status of the message.
 - ProcessedAt: The date and time when the message was processed. This field is used to track the processing date of the message.
 - CorrelationId: The correlation id of the message. This field is used to track the correlation id of the message. This field is optional and can be null.
+- TraceId: The trace id of the message. This field is used to track the trace id of the message. This field is optional and can be null.
+- SpanId: The span id of the message. This field is used to track the span id of the message. This field is optional and can be null.
 
 The `IOutboxService<T>` interface is used to send messages to the outbox. The `IOutboxService` interface has the following methods:
 

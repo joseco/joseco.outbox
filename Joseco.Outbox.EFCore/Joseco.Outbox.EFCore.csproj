@@ -24,7 +24,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Joseco.Outbox.Contracts" Version="1.0.2" />
+    <PackageReference Include="Joseco.Outbox.Contracts" Version="1.0.2" Condition="!Exists('$(MSBuildThisFileDirectory)..\Joseco.Outbox.Contracts\Joseco.Outbox.Contracts.csproj')" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)..\Joseco.Outbox.Contracts\Joseco.Outbox.Contracts.csproj" Condition="Exists('$(MSBuildThisFileDirectory)..\Joseco.Outbox.Contracts\Joseco.Outbox.Contracts.csproj')" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

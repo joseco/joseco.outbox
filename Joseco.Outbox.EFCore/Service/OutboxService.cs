@@ -19,7 +19,7 @@ internal class OutboxService<E>(IOutboxDatabase<E> outboxDatabase) : IOutboxServ
 
     public async Task<IEnumerable<OutboxMessage<E>>> GetUnprocessedAsync(int pageSize = 20)
     {
-        return await outboxDatabase.GetOutboxMessages().AsNoTracking().Where(x => !x.Processed).Take(pageSize).ToListAsync();
+        return await outboxDatabase.GetOutboxMessages().AsNoTracking().Where(x => !x.Processed).OrderBy(x => x.Created).Take(pageSize).ToListAsync();
     }
 
 }
